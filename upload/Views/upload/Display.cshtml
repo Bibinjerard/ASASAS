@@ -1,0 +1,24 @@
+﻿@model upload.Models.UploadedFiles
+
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_GameLayout.cshtml";
+}
+<p>
+    @Html.ActionLink("Create New","upload")
+</p>
+
+    <% foreach (var file in Model)
+       { %>
+<tr>
+    <td>
+                <%= file.Name %>
+    </td>
+    <td>
+        <%= (file.Size/1000) %> KB
+    </td>
+    <td>
+        <%= Html.Image("previewImage",file.Path,new { width=100, height=100}) %>
+    </td>
+</tr>
+    <% } %>

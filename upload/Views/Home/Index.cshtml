@@ -1,0 +1,7 @@
+﻿@Model upload.Models.UploadFiles
+@using (Html.BeginForm("Upload", "Upload", FormMethod.Post, new { enctype="multipart/form-data" }))
+    { 
+    <input type="file" name="fileUpload" />
+    <input type="submit" value="Upload" />
+}
+
